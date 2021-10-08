@@ -1,0 +1,713 @@
+{
+	"info": {
+		"_postman_id": "8fef056d-1da8-436e-a3b9-56f4849a4aa7",
+		"name": "Microservices - Cloud Google",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Credito",
+			"item": [
+				{
+					"name": "Consulta status aplicação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_credito}}/credito/status_aplicacao",
+							"host": [
+								"{{url_credito}}"
+							],
+							"path": [
+								"credito",
+								"status_aplicacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creditar valor em conta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conta_id\" : 999,\r\n    \"valor_credito\": 1000,\r\n    \"cliente_id\": 1,\r\n    \"tipo_conta\": \"contacorrente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_credito}}/credito",
+							"host": [
+								"{{url_credito}}"
+							],
+							"path": [
+								"credito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Extrato Conta Corrente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_credito}}/credito/extrato/contacorrente/1500603806",
+							"host": [
+								"{{url_credito}}"
+							],
+							"path": [
+								"credito",
+								"extrato",
+								"contacorrente",
+								"1500603806"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Extrato Conta Investimento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_credito}}/credito/extrato/investimento/1500500005",
+							"host": [
+								"{{url_credito}}"
+							],
+							"path": [
+								"credito",
+								"extrato",
+								"investimento",
+								"1500500005"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Saldo Conta Corrente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_credito}}/credito/saldo/contacorrente/1500603806",
+							"host": [
+								"{{url_credito}}"
+							],
+							"path": [
+								"credito",
+								"saldo",
+								"contacorrente",
+								"1500603806"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Saldo Conta Investimento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_credito}}/credito/saldo/investimento/1500500005",
+							"host": [
+								"{{url_credito}}"
+							],
+							"path": [
+								"credito",
+								"saldo",
+								"investimento",
+								"1500500005"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search por tipo conta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_credito}}/credito/contas?tipoConta=contacorrente",
+							"host": [
+								"{{url_credito}}"
+							],
+							"path": [
+								"credito",
+								"contas"
+							],
+							"query": [
+								{
+									"key": "tipoConta",
+									"value": "contacorrente"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Contas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_credito}}/credito/listar/contas",
+							"host": [
+								"{{url_credito}}"
+							],
+							"path": [
+								"credito",
+								"listar",
+								"contas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Debito",
+			"item": [
+				{
+					"name": "[POST] - Debito - Debitar valor em conta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conta_id\" : 1500603806,\r\n    \"valor_debito\": 5000.00,\r\n    \"cliente_id\": 1,\r\n    \"tipo_conta\": \"contacorrente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_debito}}/debito",
+							"host": [
+								"{{url_debito}}"
+							],
+							"path": [
+								"debito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Debito - Extrato conta corrente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conta_id\" : 1500555551,\r\n    \"cliente_id\": 568,\r\n    \"saldo\": 100000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_debito}}/debito/extrato/contacorrente/1500603806",
+							"host": [
+								"{{url_debito}}"
+							],
+							"path": [
+								"debito",
+								"extrato",
+								"contacorrente",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Debito - Extrato investimento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conta_id\" : 1500555551,\r\n    \"cliente_id\": 568,\r\n    \"saldo\": 100000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_debito}}/debito/extrato/investimento/1500603806",
+							"host": [
+								"{{url_debito}}"
+							],
+							"path": [
+								"debito",
+								"extrato",
+								"investimento",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Debito - Saldo conta corrente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conta_id\" : 1500555551,\r\n    \"cliente_id\": 568,\r\n    \"saldo\": 100000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_debito}}/debito/saldo/contacorrente/1500603806",
+							"host": [
+								"{{url_debito}}"
+							],
+							"path": [
+								"debito",
+								"saldo",
+								"contacorrente",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Debito - Saldo investimento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conta_id\" : 1500555551,\r\n    \"cliente_id\": 568,\r\n    \"saldo\": 100000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_debito}}/debito/saldo/investimento/1500603806",
+							"host": [
+								"{{url_debito}}"
+							],
+							"path": [
+								"debito",
+								"saldo",
+								"investimento",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fatura",
+			"item": [
+				{
+					"name": "[GET] - Fatura - Consulta status aplicação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_fatura}}/fatura/status_aplicacao",
+							"host": [
+								"{{url_fatura}}"
+							],
+							"path": [
+								"fatura",
+								"status_aplicacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Fatura - Consulta fatura",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_fatura}}/fatura/consulta/1500603806/outubro/2021",
+							"host": [
+								"{{url_fatura}}"
+							],
+							"path": [
+								"fatura",
+								"consulta",
+								"1500603806",
+								"outubro",
+								"2021"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Fatura - Consulta saldo conta corrente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_fatura}}/fatura/consulta/saldo-contacorrente/1500603806",
+							"host": [
+								"{{url_fatura}}"
+							],
+							"path": [
+								"fatura",
+								"consulta",
+								"saldo-contacorrente",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[PUT] - Fatura - Pagar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor_fatura\" : 1000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_fatura}}/fatura/pagar/1500603806/outubro/2021",
+							"host": [
+								"{{url_fatura}}"
+							],
+							"path": [
+								"fatura",
+								"pagar",
+								"1500603806",
+								"outubro",
+								"2021"
+							],
+							"query": [
+								{
+									"key": "valor_fatura",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conta Corrente",
+			"item": [
+				{
+					"name": "[GET] - Conta Corrente- Consulta status aplicação Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_conta-corrente}}/conta-corrente/status_aplicacao",
+							"host": [
+								"{{url_conta-corrente}}"
+							],
+							"path": [
+								"conta-corrente",
+								"status_aplicacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Conta Corrente- Consulta detalhe conta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_conta-corrente}}/conta-corrente/consulta/1500603806",
+							"host": [
+								"{{url_conta-corrente}}"
+							],
+							"path": [
+								"conta-corrente",
+								"consulta",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Conta Corrente- Saldo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_conta-corrente}}/conta-corrente/saldo/1500603806",
+							"host": [
+								"{{url_conta-corrente}}"
+							],
+							"path": [
+								"conta-corrente",
+								"saldo",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Conta Corrente- Criar Conta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conta_id\" : 1500555551,\r\n    \"cliente_id\": 568,\r\n    \"saldo\": 100000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_conta-corrente}}/conta-corrente",
+							"host": [
+								"{{url_conta-corrente}}"
+							],
+							"path": [
+								"conta-corrente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Investimento",
+			"item": [
+				{
+					"name": "[POST] - Investimento - Criar conta investimento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conta_id\" : 1500603806,\r\n    \"cliente_id\" : 1,\r\n    \"saldo\" : 100.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_investimento}}/conta/investimento/atualizarSaldo/1500603806",
+							"host": [
+								"{{url_investimento}}"
+							],
+							"path": [
+								"conta",
+								"investimento",
+								"atualizarSaldo",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Investimento - Atualiza saldo conta investimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_investimento}}/conta/investimento/atualizarSaldo/1500603806",
+							"host": [
+								"{{url_investimento}}"
+							],
+							"path": [
+								"conta",
+								"investimento",
+								"atualizarSaldo",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] - Investimento - Consulta conta investimento Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_investimento}}/conta/investimento/1500603806",
+							"host": [
+								"{{url_investimento}}"
+							],
+							"path": [
+								"conta",
+								"investimento",
+								"1500603806"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
